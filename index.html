@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work From Home with Amazon - Remote Jobs Available Now</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #FF8C00 0%, #FFD700 50%, #FFA500 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 450px;
+            margin: 0 auto;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo-placeholder {
+            width: 200px;
+            height: 80px;
+            background: rgba(255,255,255,0.2);
+            border: 2px dashed rgba(0,0,0,0.3);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px auto;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            color: rgba(0,0,0,0.6);
+            position: relative;
+        }
+
+        .logo-placeholder::before {
+            content: "Amazon Logo";
+            font-weight: 500;
+        }
+
+        .main-headline {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 10px;
+            line-height: 1.1;
+            letter-spacing: -0.5px;
+        }
+
+        .sub-headline {
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            color: #000;
+            margin-bottom: 25px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+
+        .benefits-card {
+            background: #232F3E;
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+            border: 2px solid #FFD700;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            color: white;
+            font-weight: 400;
+            letter-spacing: 0.2px;
+        }
+
+        .benefit-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .benefit-icon {
+            background: #FFD700;
+            color: #232F3E;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .urgency-banner {
+            background: #232F3E;
+            color: white;
+            padding: 15px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 25px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            letter-spacing: 0.2px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+
+        .form-card {
+            background: #232F3E;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+            margin-bottom: 20px;
+            border: 2px solid #FFD700;
+        }
+
+        .form-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 20px;
+            text-align: center;
+            letter-spacing: -0.3px;
+        }
+
+
+
+        .cta-button {
+            width: 100%;
+            background: linear-gradient(135deg, #FF8C00 0%, #FFD700 100%);
+            color: #000;
+            padding: 22px;
+            border: 3px solid #232F3E;
+            border-radius: 15px;
+            font-family: 'Inter', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 8px 25px rgba(255,140,0,0.4), 0 0 0 2px #232F3E;
+            margin-top: 15px;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            letter-spacing: 0.3px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 35px rgba(255,140,0,0.5), 0 0 0 3px #232F3E;
+            border-color: #000;
+        }
+
+        .trust-indicators {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background: rgba(0,0,0,0.4);
+            border: 1px solid rgba(0,0,0,0.3);
+            border-radius: 15px;
+            padding: 15px;
+            margin-top: 20px;
+            color: white;
+            font-size: 12px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .trust-item {
+            flex: 1;
+        }
+
+        .trust-number {
+            font-size: 18px;
+            font-weight: bold;
+            display: block;
+        }
+
+        .disclaimer {
+            font-size: 11px;
+            color: rgba(255,255,255,0.9);
+            text-align: center;
+            margin-top: 15px;
+            line-height: 1.4;
+        }
+
+        .remote-highlight {
+            background: linear-gradient(45deg, #FFD700, #FF8C00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: bold;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .main-headline {
+                font-size: 30px;
+            }
+            
+            .amazon-logo {
+                font-size: 24px;
+                padding: 12px 20px;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo-placeholder">
+                <!-- Insert Amazon logo image here -->
+            </div>
+            <h1 class="main-headline">Work From Home<br>with Amazon</h1>
+            <p class="sub-headline">Leverage with us the ability to work remotely</p>
+        </div>
+
+        <div class="urgency-banner">
+            🔥 Limited Time: Remote Positions Filling Fast!
+        </div>
+
+        <div class="benefits-card">
+            <div class="benefit-item">
+                <div class="benefit-icon">✓</div>
+                <div><strong>100% Remote Work</strong> - No commute, work from anywhere</div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">✓</div>
+                <div><strong>Flexible Schedule</strong> - Choose your own hours</div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">✓</div>
+                <div><strong>Competitive Pay</strong> - <span style="color: #32CD32; font-weight: bold;">$15-$25+ per hour</span></div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">✓</div>
+                <div><strong>Amazon Benefits</strong> - Health insurance, PTO, discounts</div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">✓</div>
+                <div><strong>No Experience Required</strong> - Training provided</div>
+            </div>
+        </div>
+
+        <div class="form-card">
+            <h2 class="form-title">Ready to Start Your Amazon Career?</h2>
+            <div style="margin-bottom: 25px;">
+                <div style="display: flex; align-items: center; margin-bottom: 12px; color: #E0E0E0; font-size: 16px;">
+                    <span style="margin-right: 8px; font-weight: 600;">1.</span>
+                    <span style="margin-right: 10px;">⬇️</span>
+                    <span>Click the link below</span>
+                </div>
+                
+                <div style="display: flex; align-items: center; margin-bottom: 12px; color: #E0E0E0; font-size: 16px;">
+                    <span style="margin-right: 8px; font-weight: 600;">2.</span>
+                    <span style="margin-right: 10px;">📋</span>
+                    <span>Fill the 1 minute form (it's free)</span>
+                </div>
+                
+                <div style="display: flex; align-items: center; margin-bottom: 0; color: #E0E0E0; font-size: 16px;">
+                    <span style="margin-right: 8px; font-weight: 600;">3.</span>
+                    <span style="margin-right: 10px;">💰</span>
+                    <span>Get access to a pool of remote jobs</span>
+                </div>
+            </div>
+            
+            <a href="https://rewarduplevel.com/aff_c?offer_id=971&aff_id=134431" class="cta-button">
+                🚀 Find My Dream Amazon Job Now →
+            </a>
+            
+            <div style="text-align: center; margin-top: 15px; font-size: 14px; color: #B8B8B8;">
+                ⚡ Instant access • No hidden fees • 100% legitimate opportunities
+            </div>
+        </div>
+
+        <div class="trust-indicators">
+            <div class="trust-item">
+                <span class="trust-number">50K+</span>
+                Jobs Filled
+            </div>
+            <div class="trust-item">
+                <span class="trust-number">4.8★</span>
+                User Rating
+            </div>
+            <div class="trust-item">
+                <span class="trust-number">24/7</span>
+                Support
+            </div>
+        </div>
+
+        <div class="disclaimer">
+            This is a job search platform connecting you with Amazon employment opportunities. 
+            Completion of this form does not guarantee employment. Amazon is a registered trademark of Amazon.com, Inc. 
+            We are not affiliated with Amazon.com, Inc. US residents only.
+        </div>
+    </div>
+
+    <script>
+        // Add some interactive effects for the CTA button
+        document.querySelector('.cta-button').addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-3px) scale(1.02)';
+        });
+        
+        document.querySelector('.cta-button').addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+
+        // Add click tracking
+        document.querySelector('.cta-button').addEventListener('click', function() {
+            // You can add analytics tracking here if needed
+            console.log('CTA clicked - redirecting to offer page');
+        });
+    </script>
+</body>
+</html>
