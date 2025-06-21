@@ -248,6 +248,24 @@
 
 
     </style>
+
+
+    
+    <!-- NewsBreak Pixel -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window,document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', 'YOUR_NEWSBREAK_PIXEL_ID'); 
+    fbq('track', 'PageView');
+    </script>
+    
 </head>
 <body>
     <div class="container">
@@ -341,6 +359,11 @@
     </div>
 
     <script>
+        function getExternalId() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('external_id') || '';
+        }
+
         // Add some interactive effects for the CTA button
         document.querySelector('.cta-button').addEventListener('mouseenter', function() {
             this.style.transform = 'translateY(-3px) scale(1.02)';
@@ -350,10 +373,21 @@
             this.style.transform = 'translateY(0) scale(1)';
         });
 
-        // Add click tracking
-        document.querySelector('.cta-button').addEventListener('click', function() {
-            // You can add analytics tracking here if needed
-            console.log('CTA clicked - redirecting to offer page');
+        // Add click tracking with NewsBreak pixel
+        document.querySelector('.cta-button').addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent immediate redirect
+            
+            // Fire NewsBreak conversion event
+            fbq('track', 'ClickButton');
+            
+            console.log('NewsBreak pixel fired - redirecting to offer page');
+            
+            // Small delay to ensure pixel fires before redirect
+            setTimeout(function() {
+                const externalId = getExternalId();
+                const glitchyUrl = 'https://rewarrdsgiant.com/aff_c?offer_id=971&aff_id=134431&external_id=' + externalId;
+                window.location.href = glitchyUrl;
+            }, 300);
         });
     </script>
 </body>
