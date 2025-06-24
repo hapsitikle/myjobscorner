@@ -3,360 +3,548 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Work From Home with Amazon - Remote Jobs Available Now</title>
+    <title>Find Amazon Job Openings in Your Area – Apply in 1 Minute</title>
     <style>
+        /* Import fonts */
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
 
+        /* Reset & box-sizing */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             background: linear-gradient(135deg, #FF8C00 0%, #FFD700 50%, #FFA500 100%);
-            min-height: 100vh;
             color: #333;
+            min-height: 100vh;
+            line-height: 1.5;
         }
 
         .container {
             max-width: 450px;
             margin: 0 auto;
             padding: 20px;
-            min-height: 100vh;
+        }
+        /* Center content vertically if short; allow scrolling if tall */
+        .main {
             display: flex;
             flex-direction: column;
             justify-content: center;
+            min-height: 100vh;
         }
 
+        /* Header / Hero */
         .header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
-
-        .logo-placeholder {
-            width: 200px;
-            height: 80px;
-            background: rgba(255,255,255,0.2);
-            border: 2px dashed rgba(0,0,0,0.3);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px auto;
-            font-family: 'Inter', sans-serif;
-            font-size: 14px;
-            color: rgba(0,0,0,0.6);
-            position: relative;
-        }
-
-        .logo-placeholder::before {
-            content: "Amazon Logo";
-            font-weight: 500;
-        }
-
         .main-headline {
             font-family: 'Playfair Display', serif;
-            font-size: 36px;
+            font-size: 32px;
             font-weight: 700;
             color: #000;
             margin-bottom: 10px;
             line-height: 1.1;
-            letter-spacing: -0.5px;
         }
-
         .sub-headline {
-            font-family: 'Inter', sans-serif;
-            font-size: 18px;
+            font-size: 16px;
             color: #000;
-            margin-bottom: 8px;
             font-weight: 500;
-            letter-spacing: 0.3px;
+            margin-bottom: 12px;
         }
-
-        .benefits-card {
+        .trust-line {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        .trust-line span {
+            display: inline-block;
+            margin: 0 4px;
+        }
+        .hero-cta {
+            display: flex;
+            justify-content: center;
+        }
+        .hero-cta input[type="text"] {
+            width: 60%;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #232F3E;
+            border-radius: 8px 0 0 8px;
+            outline: none;
+        }
+        .hero-cta input[type="text"]::placeholder {
+            color: #777;
+        }
+        .hero-cta button {
+            width: 40%;
+            padding: 10px;
+            font-size: 16px;
             background: #232F3E;
-            border-radius: 20px;
-            padding: 25px;
-            margin-bottom: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-            border: 2px solid #FFD700;
+            color: #FFF;
+            border: 2px solid #232F3E;
+            border-left: none;
+            border-radius: 0 8px 8px 0;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .hero-cta button:hover {
+            background: #1b2430;
+            transform: translateY(-2px);
+        }
+        .hero-error {
+            color: #800;
+            font-size: 14px;
+            margin-top: 8px;
+            text-align: center;
         }
 
-        .benefit-item {
+        /* “Preview the Process” */
+        .process-section {
+            background: rgba(255,255,255,0.9);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            display: none; /* shown after ZIP entered */
+        }
+        .process-items {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .process-item {
             display: flex;
             align-items: center;
-            margin-bottom: 15px;
-            font-family: 'Inter', sans-serif;
-            font-size: 16px;
-            color: white;
-            font-weight: 400;
-            letter-spacing: 0.2px;
+        }
+        .process-icon {
+            font-size: 20px;
+            margin-right: 12px;
+        }
+        .process-text {
+            font-size: 15px;
+            color: #333;
         }
 
+        /* Sample jobs preview */
+        .jobs-preview-section {
+            background: rgba(255,255,255,0.95);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            display: none; /* shown after ZIP entered */
+        }
+        .jobs-preview-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: #000;
+            text-align: center;
+        }
+        .job-list {
+            list-style: none;
+            margin-bottom: 15px;
+        }
+        .job-list li {
+            margin-bottom: 8px;
+            font-size: 15px;
+            color: #333;
+        }
+        .jobs-note {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .reveal-cta {
+            display: flex;
+            justify-content: center;
+        }
+        .reveal-cta button {
+            padding: 12px 20px;
+            font-size: 16px;
+            background: #232F3E;
+            color: #FFF;
+            border: 2px solid #232F3E;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .reveal-cta button:hover {
+            background: #1b2430;
+            transform: translateY(-2px);
+        }
+
+        /* Benefits section */
+        .benefits-card {
+            background: rgba(35,47,62,0.95);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            display: none; /* shown after ZIP entered */
+        }
+        .benefits-card h3 {
+            font-family: 'Playfair Display', serif;
+            color: #FFF;
+            font-size: 18px;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
         .benefit-item:last-child {
             margin-bottom: 0;
         }
-
         .benefit-icon {
-            background: #FFD700;
-            color: #232F3E;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 12px;
-            font-weight: bold;
-            font-size: 14px;
+            color: #FFD700;
+            font-size: 18px;
+            margin-right: 10px;
+            line-height: 1;
+        }
+        .benefit-text {
+            color: #EEE;
+            font-size: 15px;
         }
 
-        .urgency-banner {
-            background: #232F3E;
-            color: white;
-            padding: 15px;
-            border-radius: 15px;
-            text-align: center;
+        /* Form preview screenshot */
+        .form-preview-section {
+            background: rgba(255,255,255,0.9);
+            border-radius: 12px;
+            padding: 20px;
             margin-bottom: 25px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-            font-size: 16px;
-            letter-spacing: 0.2px;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.02); }
-            100% { transform: scale(1); }
-        }
-
-        .form-card {
-            background: #232F3E;
-            border-radius: 20px;
-            padding: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-            margin-bottom: 20px;
-            border: 2px solid #FFD700;
-        }
-
-        .form-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 22px;
-            font-weight: 600;
-            color: white;
-            margin-bottom: 20px;
+            display: none; /* shown after ZIP entered */
             text-align: center;
-            letter-spacing: -0.3px;
+        }
+        .form-preview-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: #000;
+        }
+        .form-preview-section img {
+            max-width: 100%;
+            border-radius: 8px;
+            filter: blur(4px);
+        }
+        .form-preview-note {
+            font-size: 14px;
+            color: #555;
+            margin-top: 8px;
         }
 
-
-
-        .cta-button {
+        /* Final CTA */
+        .final-cta-card {
+            background: rgba(35,47,62,0.95);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+            display: none; /* shown after ZIP entered */
+            text-align: center;
+        }
+        .final-cta-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            color: #FFF;
+            margin-bottom: 12px;
+        }
+        .final-cta-card button {
             width: 100%;
+            padding: 14px;
+            font-size: 17px;
             background: linear-gradient(135deg, #FF8C00 0%, #FFD700 100%);
             color: #000;
-            padding: 22px;
-            border: 3px solid #232F3E;
-            border-radius: 15px;
-            font-family: 'Inter', sans-serif;
-            font-size: 20px;
-            font-weight: 700;
+            border: 2px solid #232F3E;
+            border-radius: 8px;
             cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 8px 25px rgba(255,140,0,0.4), 0 0 0 2px #232F3E;
-            margin-top: 15px;
-            text-decoration: none;
-            display: inline-block;
-            text-align: center;
-            letter-spacing: 0.3px;
+            transition: transform 0.2s, box-shadow 0.3s;
+        }
+        .final-cta-card button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255,140,0,0.4);
+        }
+        .final-cta-note {
+            font-size: 14px;
+            color: #DDD;
+            margin-top: 10px;
         }
 
-        .cta-button:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 12px 35px rgba(255,140,0,0.5), 0 0 0 3px #232F3E;
-            border-color: #000;
-        }
-
-        .amazon-logo {
-    width: 160px;
-    height: auto;
-    display: block;
-    margin: 0 auto 25px auto;
-    margin-top: -10px;
-    object-fit: contain;
-}
-
-
-        .trust-indicators {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            background: rgba(0,0,0,0.4);
-            border: 1px solid rgba(0,0,0,0.3);
-            border-radius: 15px;
-            padding: 15px;
-            margin-top: 20px;
-            color: white;
+        /* Footer / disclaimer */
+        footer {
             font-size: 12px;
+            color: #333;
             text-align: center;
+            margin-top: 30px;
+            padding-bottom: 20px;
+        }
+        footer a {
+            color: #232F3E;
+            text-decoration: underline;
+        }
+        /* Collapsible legal */
+        .legal-collapse {
+            font-size: 12px;
+            color: #333;
+            margin-top: 10px;
+            text-align: left;
+        }
+        .legal-collapse summary {
+            cursor: pointer;
             font-weight: 600;
+            margin-bottom: 4px;
         }
-
-        .trust-item {
-            flex: 1;
-        }
-
-        .trust-number {
-            font-size: 18px;
-            font-weight: bold;
-            display: block;
-        }
-
-        .disclaimer {
-            font-size: 11px;
-            color: black;
-            text-align: center;
-            margin-top: 15px;
+        .legal-collapse p {
+            margin-top: 6px;
             line-height: 1.4;
         }
 
-        .remote-highlight {
-            background: linear-gradient(45deg, #FFD700, #FF8C00);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: bold;
-        }
-
+        /* Responsive tweaks */
         @media (max-width: 480px) {
-            .container {
-                padding: 15px;
-            }
-            
             .main-headline {
-                font-size: 30px;
+                font-size: 28px;
             }
-            
-            .amazon-logo {
-                font-size: 24px;
-                padding: 0px 20px;
+            .sub-headline {
+                font-size: 15px;
+            }
+            .hero-cta input[type="text"],
+            .hero-cta button {
+                font-size: 14px;
+            }
+            .process-text,
+            .benefit-text,
+            .jobs-note,
+            .form-preview-note,
+            .final-cta-note {
+                font-size: 14px;
             }
         }
-
-
     </style>
-
-
-
-    
 </head>
 <body>
     <div class="container">
-        <div class="header">
-
-            <h1 class="main-headline">Amazon Careers<br>in Your Area</h1>
-            <p class="sub-headline">Leverage with us the ability to work remotely</p>
-        </div>
-
-        <div class="urgency-banner">
-            🔥 Limited Time: Positions Filling Fast!
-        </div>
-
-        
-
-        <div class="form-card">
-            <h2 class="form-title">Ready to Start Your Amazon Career?</h2>
-            <div style="margin-bottom: 25px;">
-                <div style="display: flex; align-items: center; margin-bottom: 12px; color: #E0E0E0; font-size: 16px;">
-                    <span style="margin-right: 8px; font-weight: 600;">1.</span>
-                    <span>Click the link below</span>
-                    <span style="margin-left: 8px;">⬇️</span>
+        <div class="main">
+            <!-- Hero / ZIP entry -->
+            <div class="header">
+                <h1 class="main-headline">Quickly Apply to Amazon Jobs in Your ZIP</h1>
+                <p class="sub-headline">Enter your ZIP code to preview openings & then fill a 1-minute form.</p>
+                <p class="trust-line">
+                    <span>✅ Free Service</span> | 
+                    <span>US Residents Only</span> | 
+                    <span>Not Affiliated with Amazon</span>
+                </p>
+                <div class="hero-cta">
+                    <input type="text" id="zipInput" placeholder="Enter 5-digit ZIP" maxlength="5" />
+                    <button id="zipSubmit">See Openings</button>
                 </div>
-                
-                <div style="display: flex; align-items: center; margin-bottom: 12px; color: #E0E0E0; font-size: 16px;">
-                    <span style="margin-right: 8px; font-weight: 600;">2.</span>
-                    <span>Fill the 1 minute form (it's free)</span>
-                    <span style="margin-left: 8px;">📋</span>
+                <p class="hero-error" id="zipError" style="display:none;"></p>
+            </div>
+
+            <!-- Preview the process -->
+            <div class="process-section" id="processSection">
+                <div class="process-items">
+                    <div class="process-item">
+                        <div class="process-icon">🔢</div>
+                        <div class="process-text"><strong>Step 1:</strong> Enter your ZIP code</div>
+                    </div>
+                    <div class="process-item">
+                        <div class="process-icon">👀</div>
+                        <div class="process-text"><strong>Step 2:</strong> Preview Amazon roles & pay ranges</div>
+                    </div>
+                    <div class="process-item">
+                        <div class="process-icon">📝</div>
+                        <div class="process-text"><strong>Step 3:</strong> Fill 1-minute form to connect</div>
+                    </div>
                 </div>
-                
-                <div style="display: flex; align-items: center; margin-bottom: 0; color: #E0E0E0; font-size: 16px;">
-                    <span style="margin-right: 8px; font-weight: 600;">3.</span>
-                    <span>Get access to jobs near you</span>
-                    <span style="margin-left: 8px;">💸</span>
+            </div>
+
+            <!-- Sample jobs preview -->
+            <div class="jobs-preview-section" id="jobsPreviewSection">
+                <h2>Sample Amazon Openings Near You</h2>
+                <ul class="job-list" id="jobList">
+                    <!-- Populated by JS -->
+                </ul>
+                <p class="jobs-note">These are sample roles & pay ranges to show you what’s available. Actual openings vary by location. Fill in your info next to see real-time matches.</p>
+                <div class="reveal-cta">
+                    <button id="goToFormBtn">Connect Me to Amazon Hiring Teams</button>
                 </div>
             </div>
-            
-            <a href="https://rewarrdsgiant.com/aff_c?offer_id=971&aff_id=134431" class="cta-button">
-                🚀 Find My Dream Amazon Job Now →
-            </a>
-            
-            <div style="text-align: center; margin-top: 15px; font-size: 14px; color: #B8B8B8;">
-                ⚡ Instant access • No hidden fees • 100% legitimate opportunities
+
+            <!-- Benefits section -->
+            <div class="benefits-card" id="benefitsCard">
+                <h3>Why Job Seekers Love This Service</h3>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div class="benefit-text"><strong>Instant Preview:</strong> See Amazon openings & pay ranges before sharing info.</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div class="benefit-text"><strong>No Fees Ever:</strong> We don’t charge you—Amazon pays us for connecting you.</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div class="benefit-text"><strong>Fast Application:</strong> Our form takes under 60 seconds; we forward you straight to hiring teams.</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div class="benefit-text"><strong>Trusted by Thousands:</strong> 2,500+ Americans have found roles via our service.</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div class="benefit-text"><strong>Privacy First:</strong> Your data is emailed only to Amazon recruiters. We never sell or spam.</div>
+                </div>
+            </div>
+
+            <!-- Form preview screenshot -->
+            <div class="form-preview-section" id="formPreviewSection">
+                <h3>Here’s the 1-minute form you’ll fill next</h3>
+                <!-- 
+                    Replace the src below with your actual hosted screenshot of the affiliate form page.
+                    Keep it small in file size so it loads quickly.
+                -->
+                <img src="https://via.placeholder.com/300x400?text=Form+Preview" alt="Preview of the 1-minute form" />
+                <p class="form-preview-note">When you click below, you’ll go to this simple form. We blur it here to keep focus on your info security.</p>
+            </div>
+
+            <!-- Final CTA -->
+            <div class="final-cta-card" id="finalCtaCard">
+                <h3>Ready to Connect with Amazon Hiring Teams?</h3>
+                <button id="affiliateButton">See My Amazon Matches</button>
+                <p class="final-cta-note">No fees • 100% Legitimate • US Residents Only</p>
             </div>
         </div>
 
-        <div class="benefits-card">
-            <div class="benefit-item">
-                <div class="benefit-icon">✓</div>
-                <div><strong>Career Growth</strong> - Advance within Amazon's network</div>
+        <!-- Footer / legal -->
+        <footer>
+            <div>© <span id="year"></span> JobMatch Service. All rights reserved.</div>
+            <div class="legal-collapse">
+                <details>
+                    <summary>Legal & Privacy</summary>
+                    <p>
+                        This is an independent job-matching service connecting U.S. applicants with Amazon employment opportunities.
+                        Completion of the affiliate form does not guarantee employment. Amazon is a registered trademark of Amazon.com, Inc.; we are not affiliated with Amazon.com, Inc. US residents only.
+                    </p>
+                    <p>
+                        By clicking through, you agree to our <a href="/privacy.html" target="_blank">Privacy Policy</a> and <a href="/terms.html" target="_blank">Terms of Use</a>. We forward only your submitted data to Amazon’s hiring partners. We do not sell your data. You may unsubscribe from further communications at any time.
+                    </p>
+                </details>
             </div>
-            <div class="benefit-item">
-                <div class="benefit-icon">✓</div>
-                <div><strong>Flexible Schedule</strong> - Choose your own hours</div>
-            </div>
-            <div class="benefit-item">
-                <div class="benefit-icon">✓</div>
-                <div><strong>Competitive Pay</strong> - Above industry average</div>
-            </div>
-            <div class="benefit-item">
-                <div class="benefit-icon">✓</div>
-                <div><strong>Amazon Benefits</strong> - Health insurance, PTO, discounts</div>
-            </div>
-            <div class="benefit-item">
-                <div class="benefit-icon">✓</div>
-                <div><strong>No Experience Required</strong> - Training provided</div>
-            </div>
-        </div>
-
-        <div class="trust-indicators">
-            <div class="trust-item">
-                <span class="trust-number">2500+</span>
-                Job Seekers Helped
-            </div>
-            <div class="trust-item">
-                <span class="trust-number">4.8★</span>
-                User Rating
-            </div>
-            <div class="trust-item">
-                <span class="trust-number">24/7</span>
-                Support
-            </div>
-        </div>
-
-        <div class="disclaimer">
-            This is a job search platform connecting you with Amazon employment opportunities. 
-            Completion of this form does not guarantee employment. Amazon is a registered trademark of Amazon.com, Inc. 
-            We are not affiliated with Amazon.com, Inc. US residents only.
-        </div>
+        </footer>
     </div>
 
     <script>
-// Add some interactive effects for the CTA button
-document.querySelector('.cta-button').addEventListener('mouseenter', function() {
-    this.style.transform = 'translateY(-3px) scale(1.02)';
-});
+        // Utility: Simple ZIP validation (US 5-digit)
+        function isValidUSZip(zip) {
+            return /^\d{5}$/.test(zip);
+        }
 
-document.querySelector('.cta-button').addEventListener('mouseleave', function() {
-    this.style.transform = 'translateY(0) scale(1)';
-});
+        // Sample job roles (static examples)
+        const sampleJobs = [
+            { title: 'Fulfillment Associate', pay: '$18–$20/hr' },
+            { title: 'Warehouse Associate', pay: '$17–$19/hr' },
+            { title: 'Customer Service Rep (Remote)', pay: '$16–$20/hr' },
+            { title: 'Delivery Station Team Member', pay: '$17–$21/hr' },
+            // You can add more variants if desired
+        ];
 
-// Simple click tracking for analytics
-document.querySelector('.cta-button').addEventListener('click', function() {
-    console.log('CTA clicked - redirecting to offer page');
-});
-</script>
+        // On page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Insert current year in footer
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            const zipInput = document.getElementById('zipInput');
+            const zipSubmit = document.getElementById('zipSubmit');
+            const zipError = document.getElementById('zipError');
+            const processSection = document.getElementById('processSection');
+            const jobsPreviewSection = document.getElementById('jobsPreviewSection');
+            const jobListEl = document.getElementById('jobList');
+            const benefitsCard = document.getElementById('benefitsCard');
+            const formPreviewSection = document.getElementById('formPreviewSection');
+            const finalCtaCard = document.getElementById('finalCtaCard');
+            const goToFormBtn = document.getElementById('goToFormBtn');
+            const affiliateButton = document.getElementById('affiliateButton');
+
+            let enteredZip = '';
+
+            zipSubmit.addEventListener('click', function() {
+                zipError.style.display = 'none';
+                const zip = zipInput.value.trim();
+                if (!isValidUSZip(zip)) {
+                    zipError.textContent = 'Please enter a valid 5-digit US ZIP code.';
+                    zipError.style.display = 'block';
+                    return;
+                }
+                // Valid ZIP
+                enteredZip = zip;
+                // Hide error if any
+                zipError.style.display = 'none';
+                // Reveal the “Preview the Process” & sample jobs & benefits & final CTA
+                processSection.style.display = 'block';
+
+                // Populate sample jobs (random 3 out of sampleJobs)
+                jobListEl.innerHTML = '';
+                // shuffle and pick 3
+                const shuffled = sampleJobs.sort(() => 0.5 - Math.random());
+                const selected = shuffled.slice(0, 3);
+                selected.forEach(job => {
+                    const li = document.createElement('li');
+                    li.textContent = `${job.title} – ${job.pay}`;
+                    jobListEl.appendChild(li);
+                });
+
+                // Show sections
+                jobsPreviewSection.style.display = 'block';
+                benefitsCard.style.display = 'block';
+                formPreviewSection.style.display = 'block';
+                finalCtaCard.style.display = 'block';
+
+                // Scroll to sample jobs (smooth)
+                jobsPreviewSection.scrollIntoView({ behavior: 'smooth' });
+
+                // Track event (analytics) if desired:
+                if (window.dataLayer) {
+                    window.dataLayer.push({ event: 'zip_entered', zip: enteredZip });
+                }
+            });
+
+            // On “Connect Me to Amazon Hiring Teams” (preview CTA) – scroll to final CTA
+            goToFormBtn.addEventListener('click', function() {
+                finalCtaCard.scrollIntoView({ behavior: 'smooth' });
+                // Optionally track event
+                if (window.dataLayer) {
+                    window.dataLayer.push({ event: 'preview_cta_clicked' });
+                }
+            });
+
+            // Affiliate button click
+            affiliateButton.addEventListener('click', function() {
+                // Track event
+                if (window.dataLayer) {
+                    window.dataLayer.push({ event: 'affiliate_cta_clicked', zip: enteredZip });
+                }
+                // Build affiliate URL. Replace the base URL with your actual affiliate link.
+                // Optionally append ZIP as parameter if supported: &zip=
+                let baseUrl = 'https://rewarrdsgiant.com/aff_c?offer_id=971&aff_id=134431';
+                // If your affiliate system supports passing zip, uncomment next line:
+                // baseUrl += '&zip=' + encodeURIComponent(enteredZip);
+                // Redirect:
+                window.location.href = baseUrl;
+            });
+
+            // Allow pressing Enter key in ZIP input
+            zipInput.addEventListener('keyup', function(e) {
+                if (e.key === 'Enter') {
+                    zipSubmit.click();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
