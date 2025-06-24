@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Find Amazon Job Openings – 1-Minute Sign-Up</title>
+    <title>Work From Home with Amazon - Remote Jobs Available Now</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
 
@@ -32,7 +32,28 @@
 
         .header {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .logo-placeholder {
+            width: 200px;
+            height: 80px;
+            background: rgba(255,255,255,0.2);
+            border: 2px dashed rgba(0,0,0,0.3);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px auto;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            color: rgba(0,0,0,0.6);
+            position: relative;
+        }
+
+        .logo-placeholder::before {
+            content: "Amazon Logo";
+            font-weight: 500;
         }
 
         .main-headline {
@@ -54,149 +75,6 @@
             letter-spacing: 0.3px;
         }
 
-        /* New trust line under subheadline */
-        .trust-line {
-            font-family: 'Inter', sans-serif;
-            font-size: 14px;
-            color: #333;
-            margin-bottom: 15px;
-            font-weight: 500;
-        }
-        .trust-line span {
-            margin: 0 4px;
-        }
-
-        .urgency-banner {
-            background: #232F3E;
-            color: white;
-            padding: 15px;
-            border-radius: 15px;
-            text-align: center;
-            margin-bottom: 20px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-            font-size: 16px;
-            letter-spacing: 0.2px;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.02); }
-            100% { transform: scale(1); }
-        }
-
-        /* Preview the Process block */
-        .preview-section {
-            background: rgba(255,255,255,0.85);
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-        .preview-title {
-            text-align: center;
-            font-family: 'Playfair Display', serif;
-            font-size: 20px;
-            margin-bottom: 12px;
-            color: #000;
-        }
-        .preview-items {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .preview-item {
-            flex: 1 1 30%;
-            min-width: 100px;
-            text-align: center;
-        }
-        .preview-icon {
-            font-size: 24px;
-            margin-bottom: 6px;
-        }
-        .preview-step {
-            font-size: 14px;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 4px;
-        }
-        .preview-desc {
-            font-size: 13px;
-            color: #555;
-            line-height: 1.3;
-        }
-
-        .form-card {
-            background: #232F3E;
-            border-radius: 20px;
-            padding: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-            margin-bottom: 20px;
-            border: 2px solid #FFD700;
-        }
-
-        .form-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 22px;
-            font-weight: 600;
-            color: white;
-            margin-bottom: 20px;
-            text-align: center;
-            letter-spacing: -0.3px;
-        }
-
-        /* Instruction steps updated */
-        .instruction-list {
-            margin-bottom: 25px;
-        }
-        .instruction-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 12px;
-            color: #E0E0E0;
-            font-size: 16px;
-        }
-        .instruction-item:last-child {
-            margin-bottom: 0;
-        }
-        .instruction-item span.step-number {
-            margin-right: 8px;
-            font-weight: 600;
-        }
-        .instruction-item span.step-text {
-            flex: 1;
-        }
-        .instruction-item span.step-icon {
-            margin-left: 8px;
-        }
-
-        .cta-button {
-            width: 100%;
-            background: linear-gradient(135deg, #FF8C00 0%, #FFD700 100%);
-            color: #000;
-            padding: 22px;
-            border: 3px solid #232F3E;
-            border-radius: 15px;
-            font-family: 'Inter', sans-serif;
-            font-size: 20px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 8px 25px rgba(255,140,0,0.4), 0 0 0 2px #232F3E;
-            margin-top: 15px;
-            text-decoration: none;
-            display: inline-block;
-            text-align: center;
-            letter-spacing: 0.3px;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 12px 35px rgba(255,140,0,0.5), 0 0 0 3px #232F3E;
-            border-color: #000;
-        }
-
         .benefits-card {
             background: #232F3E;
             border-radius: 20px;
@@ -204,14 +82,6 @@
             margin-bottom: 25px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.25);
             border: 2px solid #FFD700;
-        }
-
-        .benefits-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 20px;
-            color: white;
-            margin-bottom: 15px;
-            text-align: center;
         }
 
         .benefit-item {
@@ -242,6 +112,83 @@
             font-weight: bold;
             font-size: 14px;
         }
+
+        .urgency-banner {
+            background: #232F3E;
+            color: white;
+            padding: 15px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 25px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            letter-spacing: 0.2px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+
+        .form-card {
+            background: #232F3E;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+            margin-bottom: 20px;
+            border: 2px solid #FFD700;
+        }
+
+        .form-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 20px;
+            text-align: center;
+            letter-spacing: -0.3px;
+        }
+
+
+
+        .cta-button {
+            width: 100%;
+            background: linear-gradient(135deg, #FF8C00 0%, #FFD700 100%);
+            color: #000;
+            padding: 22px;
+            border: 3px solid #232F3E;
+            border-radius: 15px;
+            font-family: 'Inter', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 8px 25px rgba(255,140,0,0.4), 0 0 0 2px #232F3E;
+            margin-top: 15px;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            letter-spacing: 0.3px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 35px rgba(255,140,0,0.5), 0 0 0 3px #232F3E;
+            border-color: #000;
+        }
+
+        .amazon-logo {
+    width: 160px;
+    height: auto;
+    display: block;
+    margin: 0 auto 25px auto;
+    margin-top: -10px;
+    object-fit: contain;
+}
+
 
         .trust-indicators {
             display: flex;
@@ -276,42 +223,53 @@
             line-height: 1.4;
         }
 
+        .trust-line {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        .trust-line span {
+            margin: 0 4px;
+        }
+
+        .remote-highlight {
+            background: linear-gradient(45deg, #FFD700, #FF8C00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: bold;
+        }
+
         @media (max-width: 480px) {
             .container {
                 padding: 15px;
             }
+           
             .main-headline {
                 font-size: 30px;
             }
-            .sub-headline {
-                font-size: 16px;
-            }
-            .instruction-item {
-                font-size: 15px;
-            }
-            .benefits-card h3 {
-                font-size: 18px;
-            }
-            .benefit-item {
-                font-size: 15px;
-            }
-            /* Preview items stack */
-            .preview-items {
-                flex-direction: column;
-                gap: 12px;
-            }
-            .preview-item {
-                flex: 1 1 100%;
+           
+            .amazon-logo {
+                font-size: 24px;
+                padding: 0px 20px;
             }
         }
+
+
     </style>
+
+
+
+   
 </head>
 <body>
     <div class="container">
-        <!-- Hero / Header -->
         <div class="header">
-            <h1 class="main-headline">Quickly Apply to Amazon Jobs – 1-Minute Sign-Up</h1>
-            <p class="sub-headline">Click below, preview openings, then fill our simple 1-minute form to connect.</p>
+
+            <h1 class="main-headline">Quickly Apply To Amazon Jobs<br>1 Minute Sign Up</h1>
+            <p class="sub-headline">Click below, preview openings, then fill our<br>simple 1 minute form to connect.</p>
             <p class="trust-line">
                 <span>✅ Free Service</span> • 
                 <span>US Residents Only</span> • 
@@ -323,57 +281,39 @@
             🔥 Limited Time: Positions Filling Fast!
         </div>
 
-        <!-- Preview the Process Block -->
-        <div class="preview-section">
-            <div class="preview-title">What to Expect Next</div>
-            <div class="preview-items">
-                <div class="preview-item">
-                    <div class="preview-icon">🔗</div>
-                    <div class="preview-step">Step 1: Click the Button</div>
-                    <div class="preview-desc">You’ll be taken to a quick form page.</div>
-                </div>
-                <div class="preview-item">
-                    <div class="preview-icon">👀</div>
-                    <div class="preview-step">Step 2: Preview Openings</div>
-                    <div class="preview-desc">See Amazon roles & pay ranges before you submit.</div>
-                </div>
-                <div class="preview-item">
-                    <div class="preview-icon">📝</div>
-                    <div class="preview-step">Step 3: Fill 1-Minute Form</div>
-                    <div class="preview-desc">Complete our simple form to connect you.</div>
-                </div>
-            </div>
-        </div>
+       
 
-        <!-- Form Card (bridge CTA) -->
         <div class="form-card">
-            <h2 class="form-title">Preview &amp; Apply to Amazon Jobs</h2>
-            <div class="instruction-list">
-                <div class="instruction-item">
-                    <span class="step-number">1.</span>
-                    <span class="step-text">Click the button below</span>
-                    <span class="step-icon">⬇️</span>
+            <h2 class="form-title">Preview & Apply To Amazon Jobs</h2>
+            <div style="margin-bottom: 25px;">
+                <div style="display: flex; align-items: center; margin-bottom: 12px; color: #E0E0E0; font-size: 16px;">
+                    <span style="margin-right: 8px; font-weight: 600;">1.</span>
+                    <span>Click the link below</span>
+                    <span style="margin-left: 8px;">⬇️</span>
                 </div>
-                <div class="instruction-item">
-                    <span class="step-number">2.</span>
-                    <span class="step-text">Fill the 1-minute form (free)</span>
-                    <span class="step-icon">📋</span>
+               
+                <div style="display: flex; align-items: center; margin-bottom: 12px; color: #E0E0E0; font-size: 16px;">
+                    <span style="margin-right: 8px; font-weight: 600;">2.</span>
+                    <span>Fill the 1 minute form (free)</span>
+                    <span style="margin-left: 8px;">📋</span>
                 </div>
-                <div class="instruction-item">
-                    <span class="step-number">3.</span>
-                    <span class="step-text">Get access to Amazon job opportunities</span>
-                    <span class="step-icon">🎯</span>
+               
+                <div style="display: flex; align-items: center; margin-bottom: 0; color: #E0E0E0; font-size: 16px;">
+                    <span style="margin-right: 8px; font-weight: 600;">3.</span>
+                    <span>Get access to Amazon jobs</span>
+                    <span style="margin-left: 8px;">💸</span>
                 </div>
             </div>
+           
             <a href="https://rewarrdsgiant.com/aff_c?offer_id=971&aff_id=134431" class="cta-button">
-                See Amazon Openings in My Area →
+                🚀 See Amazon Jobs In My Area →
             </a>
+           
             <div style="text-align: center; margin-top: 15px; font-size: 14px; color: #B8B8B8;">
                 ⚡ Instant access • No hidden fees • 100% legitimate opportunities
             </div>
         </div>
 
-        <!-- Benefits Card -->
         <div class="benefits-card">
             <h3>Why Job Seekers Love This Service</h3>
             <div class="benefit-item">
@@ -398,7 +338,6 @@
             </div>
         </div>
 
-        <!-- Trust Indicators -->
         <div class="trust-indicators">
             <div class="trust-item">
                 <span class="trust-number">2500+</span>
@@ -414,21 +353,27 @@
             </div>
         </div>
 
-        <!-- Disclaimer -->
         <div class="disclaimer">
-            This is a job search platform connecting you with Amazon employment opportunities. 
-            Completion of this form does not guarantee employment. Amazon is a registered trademark of Amazon.com, Inc. 
+            This is a job search platform connecting you with Amazon employment opportunities.
+            Completion of this form does not guarantee employment. Amazon is a registered trademark of Amazon.com, Inc.
             We are not affiliated with Amazon.com, Inc. US residents only.
         </div>
     </div>
 
     <script>
-    // Add hover effect for CTA button (already in CSS), keep click tracking if desired
-    document.querySelector('.cta-button').addEventListener('click', function() {
-        console.log('Bridge CTA clicked - redirecting to offer page');
-        // You can insert analytics/event tracking here if desired, e.g.:
-        // if (window.dataLayer) { window.dataLayer.push({ event: 'bridge_cta_click' }); }
-    });
-    </script>
+// Add some interactive effects for the CTA button
+document.querySelector('.cta-button').addEventListener('mouseenter', function() {
+    this.style.transform = 'translateY(-3px) scale(1.02)';
+});
+
+document.querySelector('.cta-button').addEventListener('mouseleave', function() {
+    this.style.transform = 'translateY(0) scale(1)';
+});
+
+// Simple click tracking for analytics
+document.querySelector('.cta-button').addEventListener('click', function() {
+    console.log('CTA clicked - redirecting to offer page');
+});
+</script>
 </body>
 </html>
