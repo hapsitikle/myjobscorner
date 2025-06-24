@@ -227,7 +227,7 @@
             font-family: 'Inter', sans-serif;
             font-size: 14px;
             color: #333;
-            margin-bottom: 15px;
+            margin-bottom: 8px;
             font-weight: 500;
         }
         .trust-line span {
@@ -242,36 +242,67 @@
             font-weight: bold;
         }
 
-        /* Insert near benefits-card style */
+        /* Success Metrics styling */
 .success-card {
     background: #232F3E;
     border-radius: 20px;
-    padding: 20px;
-    margin-bottom: 20px;
+    padding: 25px;
+    margin-bottom: 25px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.25);
     border: 2px solid #FFD700;
 }
+
 .success-card h3 {
     font-family: 'Playfair Display', serif;
     font-size: 20px;
-    color: white;
-    margin-bottom: 12px;
+    color: #FFD700;            /* Title in gold for emphasis */
     text-align: center;
+    margin-bottom: 16px;
+    position: relative;
 }
-.success-item {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 10px;
+
+/* Optional decorative underline under heading */
+.success-card h3::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: #FFD700;
+    margin: 8px auto 0;
+}
+
+.success-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    row-gap: 12px;
+    column-gap: 10px;
+}
+
+.success-label {
     font-family: 'Inter', sans-serif;
     font-size: 15px;
-    color: white;
+    font-weight: 600;
+    color: #FFD700;         /* labels in gold for contrast */
+    text-align: left;
 }
-.success-item:last-child {
-    margin-bottom: 0;
+
+.success-value {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: #EEE;            /* lighter text for values */
+    line-height: 1.4;
 }
-.success-item strong {
-    margin-right: 6px;
+
+/* Responsive: stack on narrow screens */
+@media (max-width: 480px) {
+    .success-grid {
+        grid-template-columns: 1fr;
+    }
+    .success-label {
+        margin-bottom: 4px;
+    }
 }
+
 
 
         @media (max-width: 480px) {
@@ -303,9 +334,9 @@
             <h1 class="main-headline">Amazon Jobs Quick Apply:<br>1 Minute Sign Up</h1>
             <p class="sub-headline">Click below, preview openings, then fill<br>our simple 1 minute form to connect.</p>
             <p class="trust-line">
-                <span>✅ Free Service</span> • 
-                <span>US Residents Only</span> • 
-                <span>Not Affiliated with Amazon</span>
+                <span>✅ Free Service</span> ✅ 
+                <span>US Residents Only</span>  
+                ✅ Not Affiliated with Amazon
             </p>
         </div>
 
@@ -346,22 +377,23 @@
             </div>
         </div>
 
-        <!-- After your existing benefits-card -->
-<div class="success-card">
+        <div class="success-card">
     <h3>Our Users’ Success Metrics</h3>
-    <div class="success-item">
-        <strong>Interview Rate:</strong> ~35% of applicants secure an interview within 7 days.
-    </div>
-    <div class="success-item">
-        <strong>Average Time to Hire:</strong> ~21 days from application to offer.
-    </div>
-    <div class="success-item">
-        <strong>Recruiter Response:</strong> Most users hear back within 3–5 days.
-    </div>
-    <div class="success-item">
-        <strong>Volume to Interviews:</strong> Over 2,500 applicants served; ~1,000 advanced to interviews.
+    <div class="success-grid">
+        <div class="success-label">Interview Rate:</div>
+        <div class="success-value">~35% of applicants secure an interview within 7 days.</div>
+
+        <div class="success-label">Average Time to Hire:</div>
+        <div class="success-value">~21 days from application to offer.</div>
+
+        <div class="success-label">Recruiter Response:</div>
+        <div class="success-value">Most users hear back within 3–5 days.</div>
+
+        <div class="success-label">Volume to Interviews:</div>
+        <div class="success-value">Over 2,500 applicants served; ~1,000 advanced to interviews.</div>
     </div>
 </div>
+
 
 
 
