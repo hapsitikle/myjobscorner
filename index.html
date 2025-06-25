@@ -80,7 +80,7 @@
         /* Hero Section */
         #hero {
             padding-top: 20px;
-            padding-bottom: 20px;
+            padding-bottom: 10px;
         }
 
         /* Intro Section */
@@ -324,16 +324,16 @@
 </head>
 <body>
     <div class="container">
-        <!-- Hero Section -->
+        <!-- Hero Section: headline + subheadline, no immediate CTA -->
         <section id="hero">
             <h1>Amazon is Hiring Near You — Apply Now in 1 Minute</h1>
             <p class="subheadline">Multiple Positions Available Across the U.S.</p>
-            <button id="primary-cta" class="cta-button">Show Me Amazon Jobs Near Me →</button>
+            <!-- Top CTA removed so user reads intro & tips first -->
         </section>
 
-        <!-- Intro Paragraph -->
+        <!-- Intro Paragraph: guide to read tips first -->
         <section id="intro">
-            <p>Looking for Amazon roles? Here’s how to apply quickly and get in front of hiring teams in your area. We share 3 simple tips to boost your chances—then you can connect in just one minute.</p>
+            <p>Before you apply, please read these 3 quick tips to boost your chances of landing an Amazon role. After that, click the button below to see live openings near you and apply in under 60 seconds.</p>
         </section>
 
         <!-- Tips Section -->
@@ -351,6 +351,7 @@
                 <h3>3. Use Accurate Location Info</h3>
                 <p>Ensure your ZIP or city is correct so you see nearby roles. If you commute or move soon, choose appropriately.</p>
             </div>
+            <!-- CTA after tips -->
             <button id="secondary-cta" class="cta-button">See Amazon Jobs Near Me →</button>
         </section>
 
@@ -437,11 +438,7 @@
             window.location.href = AFF_URL;
         }
 
-        // Attach to all CTA buttons
-        document.getElementById('primary-cta').addEventListener('click', function(e) {
-            e.preventDefault();
-            redirectToAffiliate();
-        });
+        // Attach to CTA buttons (only those present now)
         document.getElementById('secondary-cta').addEventListener('click', function(e) {
             e.preventDefault();
             redirectToAffiliate();
@@ -465,7 +462,6 @@
             q.addEventListener('click', function() {
                 const answer = this.nextElementSibling;
                 const isActive = this.classList.contains('active');
-                // Close any open answer in this section if desired; or allow multiple open
                 if (isActive) {
                     this.classList.remove('active');
                     answer.style.display = 'none';
