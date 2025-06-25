@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Work From Home with Amazon - Remote Jobs Available Now</title>
+    <title>Amazon is Hiring Near You — Apply Now in 1 Minute</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
 
@@ -16,157 +16,55 @@
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             background: linear-gradient(135deg, #FF8C00 0%, #FFD700 50%, #FFA500 100%);
-            min-height: 100vh;
             color: #333;
+            line-height: 1.5;
         }
 
         .container {
             max-width: 450px;
             margin: 0 auto;
             padding: 20px;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
         }
 
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .logo-placeholder {
-            width: 200px;
-            height: 80px;
-            background: rgba(255,255,255,0.2);
-            border: 2px dashed rgba(0,0,0,0.3);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px auto;
-            font-family: 'Inter', sans-serif;
-            font-size: 14px;
-            color: rgba(0,0,0,0.6);
-            position: relative;
-        }
-
-        .logo-placeholder::before {
-            content: "Amazon Logo";
-            font-weight: 500;
-        }
-
-        .main-headline {
+        h1, h2, h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 36px;
-            font-weight: 700;
             color: #000;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
             line-height: 1.1;
             letter-spacing: -0.5px;
+            text-align: center;
         }
 
-        .sub-headline {
+        .subheadline {
             font-family: 'Inter', sans-serif;
             font-size: 18px;
             color: #000;
             font-weight: 500;
             letter-spacing: 0.3px;
-        }
-
-        .benefits-card {
-            background: #232F3E;
-            border-radius: 20px;
-            padding: 25px;
-            margin-bottom: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-            border: 2px solid #FFD700;
-        }
-
-        .benefit-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-            font-family: 'Inter', sans-serif;
-            font-size: 16px;
-            color: white;
-            font-weight: 400;
-            letter-spacing: 0.2px;
-        }
-
-        .benefit-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .benefit-icon {
-            background: #FFD700;
-            color: #232F3E;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 12px;
-            font-weight: bold;
-            font-size: 14px;
-        }
-
-        .urgency-banner {
-            background: #232F3E;
-            color: white;
-            padding: 15px;
-            border-radius: 15px;
             text-align: center;
-            margin-bottom: 25px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-            font-size: 16px;
-            letter-spacing: 0.2px;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.02); }
-            100% { transform: scale(1); }
-        }
-
-        .form-card {
-            background: #232F3E;
-            border-radius: 20px;
-            padding: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
             margin-bottom: 20px;
-            border: 2px solid #FFD700;
         }
 
-        .form-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 22px;
-            font-weight: 600;
-            color: white;
-            margin-bottom: 20px;
-            text-align: center;
-            letter-spacing: -0.3px;
-        }
-
-
-
+        /* CTA button (same as existing theme) */
         .cta-button {
             width: 100%;
             background: linear-gradient(135deg, #FF8C00 0%, #FFD700 100%);
             color: #000;
-            padding: 22px;
+            padding: 18px;
             border: 3px solid #232F3E;
             border-radius: 15px;
             font-family: 'Inter', sans-serif;
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 700;
             cursor: pointer;
             transition: all 0.3s;
             box-shadow: 0 8px 25px rgba(255,140,0,0.4), 0 0 0 2px #232F3E;
-            margin-top: 15px;
+            margin: 15px 0;
             text-decoration: none;
             display: inline-block;
             text-align: center;
@@ -179,16 +77,104 @@
             border-color: #000;
         }
 
-        .amazon-logo {
-    width: 160px;
-    height: auto;
-    display: block;
-    margin: 0 auto 25px auto;
-    margin-top: -10px;
-    object-fit: contain;
-}
+        /* Hero Section */
+        #hero {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
 
+        /* Intro Section */
+        #intro p {
+            font-size: 16px;
+            color: #000;
+            margin-bottom: 20px;
+            text-align: center;
+        }
 
+        /* Tips Section */
+        #tips {
+            margin-bottom: 30px;
+        }
+        #tips h2 {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        .tip-card {
+            background: #232F3E;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            border: 2px solid #FFD700;
+        }
+        .tip-card h3 {
+            font-size: 18px;
+            color: #FFD700;
+            margin-bottom: 8px;
+        }
+        .tip-card p {
+            font-size: 15px;
+            color: #EEE;
+        }
+
+        /* Success Metrics & Testimonial */
+        #metrics {
+            margin-bottom: 30px;
+        }
+        #metrics h2 {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        .metrics-grid {
+            background: #232F3E;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+            border: 2px solid #FFD700;
+            margin-bottom: 15px;
+        }
+        .metrics-grid .success-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            row-gap: 12px;
+            column-gap: 10px;
+        }
+        .metrics-grid .success-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            color: #FFD700;
+            text-align: left;
+        }
+        .metrics-grid .success-value {
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            color: #EEE;
+            line-height: 1.4;
+        }
+        .testimonial {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #333;
+            font-style: italic;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .testimonial p {
+            margin-bottom: 8px;
+        }
+        .testimonial .author {
+            font-weight: 600;
+            font-style: normal;
+            color: #000;
+        }
+
+        /* Trust Indicators */
         .trust-indicators {
             display: flex;
             justify-content: space-around;
@@ -197,257 +183,298 @@
             border: 1px solid rgba(0,0,0,0.3);
             border-radius: 15px;
             padding: 15px;
-            margin-top: 20px;
+            margin-bottom: 20px;
             color: white;
             font-size: 12px;
             text-align: center;
             font-weight: 600;
         }
-
         .trust-item {
             flex: 1;
         }
-
         .trust-number {
             font-size: 18px;
             font-weight: bold;
             display: block;
         }
 
-        .disclaimer {
-            font-size: 11px;
-            color: black;
+        /* Final CTA Section */
+        #final-cta {
             text-align: center;
-            margin-top: 15px;
-            line-height: 1.4;
+            margin-bottom: 30px;
+        }
+        #final-cta p {
+            font-size: 16px;
+            margin-bottom: 12px;
+            color: #000;
         }
 
-        .trust-line {
+        /* FAQ Section */
+        #faq {
+            margin-bottom: 30px;
+        }
+        #faq h2 {
+            font-size: 22px;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        .faq-item {
+            border-bottom: 1px solid rgba(0,0,0,0.2);
+        }
+        .faq-question {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 12px 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #000;
+        }
+        .faq-answer {
             font-family: 'Inter', sans-serif;
             font-size: 14px;
             color: #333;
-            margin-bottom: 8px;
-            font-weight: 500;
+            padding-bottom: 12px;
+            display: none;
         }
-        .trust-line span {
-            margin: 0 4px;
+        .faq-question::after {
+            content: '+';
+            font-size: 18px;
+            color: #333;
         }
-
-        .remote-highlight {
-            background: linear-gradient(45deg, #FFD700, #FF8C00);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: bold;
+        .faq-question.active::after {
+            content: '−';
         }
 
-        /* Success Metrics styling */
-.success-card {
-    background: #232F3E;
-    border-radius: 20px;
-    padding: 25px;
-    margin-bottom: 25px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-    border: 2px solid #FFD700;
-}
+        /* Disclaimer */
+        .disclaimer-section {
+            font-size: 11px;
+            color: #333;
+            text-align: center;
+            margin-bottom: 40px;
+            line-height: 1.4;
+        }
 
-.success-card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    color: #FFD700;            /* Title in gold for emphasis */
-    text-align: center;
-    margin-bottom: 16px;
-    position: relative;
-}
-
-/* Optional decorative underline under heading */
-.success-card h3::after {
-    content: '';
-    display: block;
-    width: 40px;
-    height: 2px;
-    background: #FFD700;
-    margin: 8px auto 0;
-}
-
-.success-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    row-gap: 12px;
-    column-gap: 10px;
-}
-
-.success-label {
-    font-family: 'Inter', sans-serif;
-    font-size: 15px;
-    font-weight: 600;
-    color: #FFD700;         /* labels in gold for contrast */
-    text-align: left;
-}
-
-.success-value {
-    font-family: 'Inter', sans-serif;
-    font-size: 15px;
-    color: #EEE;            /* lighter text for values */
-    line-height: 1.4;
-}
-
-/* Responsive: stack on narrow screens */
-@media (max-width: 480px) {
-    .success-grid {
-        grid-template-columns: 1fr;
-    }
-    .success-label {
-        margin-bottom: 4px;
-    }
-}
-
-
+        /* Floating CTA */
+        #floating-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #232F3E;
+            padding: 10px;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        #floating-cta .cta-button-small {
+            background: linear-gradient(135deg, #FF8C00 0%, #FFD700 100%);
+            color: #000;
+            padding: 12px 20px;
+            border: 2px solid #232F3E;
+            border-radius: 12px;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(255,140,0,0.4), 0 0 0 1px #232F3E;
+            letter-spacing: 0.3px;
+        }
+        #floating-cta .cta-button-small:hover {
+            transform: translateY(-2px) scale(1.01);
+            box-shadow: 0 8px 20px rgba(255,140,0,0.5), 0 0 0 2px #232F3E;
+        }
+        #floating-cta .close-btn {
+            margin-left: 10px;
+            font-size: 18px;
+            color: #fff;
+            cursor: pointer;
+        }
 
         @media (max-width: 480px) {
-            .container {
-                padding: 15px;
+            h1 {
+                font-size: 28px;
             }
-           
-            .main-headline {
-                font-size: 30px;
+            .subheadline {
+                font-size: 16px;
             }
-           
-            .amazon-logo {
-                font-size: 24px;
-                padding: 0px 20px;
+            .tip-card h3 {
+                font-size: 16px;
+            }
+            .tip-card p {
+                font-size: 14px;
+            }
+            #metrics h2, #tips h2 {
+                font-size: 20px;
+            }
+            .metrics-grid .success-label, .metrics-grid .success-value {
+                font-size: 14px;
+            }
+            #floating-cta .cta-button-small {
+                font-size: 14px;
+                padding: 10px 16px;
             }
         }
-
-
     </style>
-
-
-
-   
 </head>
 <body>
     <div class="container">
-        <div class="header">
+        <!-- Hero Section -->
+        <section id="hero">
+            <h1>Amazon is Hiring Near You — Apply Now in 1 Minute</h1>
+            <p class="subheadline">Multiple Positions Available Across the U.S.</p>
+            <button id="primary-cta" class="cta-button">Show Me Amazon Jobs Near Me →</button>
+        </section>
 
-            <h1 class="main-headline">Amazon Jobs Quick Apply:<br>1 Minute Sign Up</h1>
-            <p class="sub-headline">Click below, preview openings, then fill<br>our simple 1 minute form to connect.</p>
-        </div>
+        <!-- Intro Paragraph -->
+        <section id="intro">
+            <p>Looking for Amazon roles? Here’s how to apply quickly and get in front of hiring teams in your area. We share 3 simple tips to boost your chances—then you can connect in just one minute.</p>
+        </section>
 
-        <div class="urgency-banner">
-            🔥 Limited Time: Positions Filling Fast!
-        </div>
+        <!-- Tips Section -->
+        <section id="tips">
+            <h2>3 Quick Tips to Land Amazon Jobs Faster</h2>
+            <div class="tip-card">
+                <h3>1. Highlight Your Availability</h3>
+                <p>Amazon values candidates ready to start quickly. On your form/profile, select “Immediate” if you can—this speeds up scheduling interviews.</p>
+            </div>
+            <div class="tip-card">
+                <h3>2. Tailor Your Profile to Key Skills</h3>
+                <p>Emphasize any relevant experience (customer service, warehouse, tech support) so you match the right opening.</p>
+            </div>
+            <div class="tip-card">
+                <h3>3. Use Accurate Location Info</h3>
+                <p>Ensure your ZIP or city is correct so you see nearby roles. If you commute or move soon, choose appropriately.</p>
+            </div>
+            <button id="secondary-cta" class="cta-button">See Amazon Jobs Near Me →</button>
+        </section>
 
-       
-
-        <div class="form-card">
-            <h2 class="form-title">Preview & Apply To Amazon Jobs</h2>
-            <div style="margin-bottom: 25px;">
-                <div style="display: flex; align-items: center; margin-bottom: 12px; color: #E0E0E0; font-size: 16px;">
-                    <span style="margin-right: 8px; font-weight: 600;">1.</span>
-                    <span>Click the link below</span>
-                    <span style="margin-left: 8px;">⬇️</span>
-                </div>
-               
-                <div style="display: flex; align-items: center; margin-bottom: 12px; color: #E0E0E0; font-size: 16px;">
-                    <span style="margin-right: 8px; font-weight: 600;">2.</span>
-                    <span>Fill the 1 minute form (free)</span>
-                    <span style="margin-left: 8px;">📋</span>
-                </div>
-               
-                <div style="display: flex; align-items: center; margin-bottom: 0; color: #E0E0E0; font-size: 16px;">
-                    <span style="margin-right: 8px; font-weight: 600;">3.</span>
-                    <span>Get access to Amazon jobs</span>
-                    <span style="margin-left: 8px;">💸</span>
+        <!-- Success Metrics & Testimonial -->
+        <section id="metrics">
+            <h2>Our Users’ Success Metrics</h2>
+            <div class="metrics-grid">
+                <div class="success-grid">
+                    <div class="success-label">Interview Rate:</div>
+                    <div class="success-value">~35% of applicants secure an interview within 7 days.</div>
+                    <div class="success-label">Average Time to Hire:</div>
+                    <div class="success-value">~21 days from application to offer.</div>
+                    <div class="success-label">Recruiter Response:</div>
+                    <div class="success-value">Most users hear back within 3–5 days.</div>
                 </div>
             </div>
-           
-            <a href="https://rewarduplevel.com/aff_c?offer_id=971&aff_id=134431" class="cta-button">
-                See Amazon Jobs In My Area →
-            </a>
-           
-            <div style="text-align: center; margin-top: 15px; font-size: 14px; color: #B8B8B8;">
-                ⚡ Instant access • No hidden fees • 100% legitimate opportunities
+            <div class="testimonial">
+                <p>“I applied through this link and got an Amazon interview in 5 days—highly recommended!”<br>
+                <span class="author">— J.S., TX</span></p>
             </div>
-        </div>
+            <div class="trust-indicators">
+                <div class="trust-item">
+                    <span class="trust-number">2,500+</span>
+                    Job Seekers Helped
+                </div>
+                <div class="trust-item">
+                    <span class="trust-number">4.8★</span>
+                    User Rating
+                </div>
+                <div class="trust-item">
+                    <span class="trust-number">24/7</span>
+                    Support
+                </div>
+            </div>
+        </section>
 
-        <div class="success-card">
-    <h3>Our Users’ Success Metrics</h3>
-    <div class="success-grid">
-        <div class="success-label">Interview Rate:</div>
-        <div class="success-value">~35% of applicants secure an interview within 7 days.</div>
+        <!-- Final CTA Section -->
+        <section id="final-cta">
+            <p>Amazon is hiring now. Apply in under 1 minute—no fees.</p>
+            <button id="final-cta-btn" class="cta-button">Apply Now →</button>
+        </section>
 
-        <div class="success-label">Average Time to Hire:</div>
-        <div class="success-value">~21 days from application to offer.</div>
+        <!-- FAQ Section -->
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <div class="faq-question">Is this really free?</div>
+                <div class="faq-answer">Yes, it's completely free to apply. Amazon covers any costs; we simply connect you to their hiring teams.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Will I get spammed?</div>
+                <div class="faq-answer">No. Your information goes only to relevant hiring teams. We never sell or share your data beyond the application process.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What if no jobs are available in my area right now?</div>
+                <div class="faq-answer">Openings vary by location and timing. If there are no immediate matches, your profile stays on file and you’ll be notified when new roles open.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">How long does it take to hear back?</div>
+                <div class="faq-answer">Most users hear back from recruiters within 3–5 days after applying, depending on role and volume of applicants.</div>
+            </div>
+        </section>
 
-        <div class="success-label">Recruiter Response:</div>
-        <div class="success-value">Most users hear back within 3–5 days.</div>
+        <!-- Disclaimer -->
+        <footer class="disclaimer-section">
+            <p>This platform connects you to Amazon employment opportunities. Completion of our form does not guarantee employment. Amazon® is a trademark of Amazon.com, Inc.; we are not affiliated with Amazon.com, Inc. U.S. residents only.</p>
+            <p>We respect your privacy: your data goes only to hiring partners; we never sell or spam.</p>
+        </footer>
     </div>
-</div>
 
-
-
-
-        <div class="benefits-card">
-            <h3 style="color: white;">How You Benefit:</h3>
-            <div class="benefit-item">
-                <div class="benefit-icon">✓</div>
-                <div><strong>Instant Preview:</strong> See Amazon openings & pay ranges before sharing info.</div>
-            </div>
-            <div class="benefit-item">
-                <div class="benefit-icon">✓</div>
-                <div><strong>No Fees Ever:</strong> We don’t charge you—Amazon pays us for connecting you.</div>
-            </div>
-            <div class="benefit-item">
-                <div class="benefit-icon">✓</div>
-                <div><strong>Fast Applications:</strong> Our form takes under 60 seconds; we forward you straight to hiring teams.</div>
-            </div>
-            <div class="benefit-item">
-                <div class="benefit-icon">✓</div>
-                <div><strong>Trusted by Thousands:</strong> 2,500+ Americans have found Amazon roles through us.</div>
-            </div>
-            <div class="benefit-item">
-                <div class="benefit-icon">✓</div>
-                <div><strong>Privacy First:</strong> Your data is emailed only to Amazon recruiters. We never sell or spam.</div>
-            </div>
-        </div>
-
-        <div class="trust-indicators">
-            <div class="trust-item">
-                <span class="trust-number">2500+</span>
-                Job Seekers Helped
-            </div>
-            <div class="trust-item">
-                <span class="trust-number">4.8★</span>
-                User Rating
-            </div>
-            <div class="trust-item">
-                <span class="trust-number">24/7</span>
-                Support
-            </div>
-        </div>
-
-        <div class="disclaimer">
-            This is a job search platform connecting you with Amazon employment opportunities.
-            Completion of this form does not guarantee employment. Amazon is a registered trademark of Amazon.com, Inc.
-            We are not affiliated with Amazon.com, Inc. US residents only.
-        </div>
+    <!-- Floating CTA -->
+    <div id="floating-cta">
+        <button id="floating-cta-btn" class="cta-button-small">Apply Now (1-Minute)</button>
+        <span class="close-btn" id="floating-close">×</span>
     </div>
 
     <script>
-// Add some interactive effects for the CTA button
-document.querySelector('.cta-button').addEventListener('mouseenter', function() {
-    this.style.transform = 'translateY(-3px) scale(1.02)';
-});
+        // Affiliate URL
+        const AFF_URL = "https://rewarduplevel.com/aff_c?offer_id=971&aff_id=134431";
 
-document.querySelector('.cta-button').addEventListener('mouseleave', function() {
-    this.style.transform = 'translateY(0) scale(1)';
-});
+        // Handler to redirect to affiliate link
+        function redirectToAffiliate() {
+            console.log('Redirecting to affiliate URL');
+            window.location.href = AFF_URL;
+        }
 
-// Simple click tracking for analytics
-document.querySelector('.cta-button').addEventListener('click', function() {
-    console.log('CTA clicked - redirecting to offer page');
-});
-</script>
+        // Attach to all CTA buttons
+        document.getElementById('primary-cta').addEventListener('click', function(e) {
+            e.preventDefault();
+            redirectToAffiliate();
+        });
+        document.getElementById('secondary-cta').addEventListener('click', function(e) {
+            e.preventDefault();
+            redirectToAffiliate();
+        });
+        document.getElementById('final-cta-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            redirectToAffiliate();
+        });
+        document.getElementById('floating-cta-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            redirectToAffiliate();
+        });
+
+        // Floating CTA close button
+        document.getElementById('floating-close').addEventListener('click', function() {
+            document.getElementById('floating-cta').style.display = 'none';
+        });
+
+        // FAQ accordion toggle
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const isActive = this.classList.contains('active');
+                // Close any open answer in this section if desired; or allow multiple open
+                if (isActive) {
+                    this.classList.remove('active');
+                    answer.style.display = 'none';
+                } else {
+                    this.classList.add('active');
+                    answer.style.display = 'block';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
